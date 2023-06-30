@@ -1,0 +1,62 @@
+sudo apt update && sudo apt install apt-transport-https ca-certificates curl software-properties-common -y && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" && sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin && sudo apt-get install docker-compose-plugin 
+ 
+ 
+ 
+ 
+sudo apt install git-all 
+ 
+ 
+sudo apt-get remove docker docker-engine docker.io containerd runc 
+ 
+ 
+sudo apt-get update 
+ 
+sudo apt-get install ca-certificates curl gnupg lsb-release 
+ 
+ 
+sudo mkdir -m 0755 -p /etc/apt/keyrings 
+ 
+ 
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg 
+ 
+echo  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null 
+ 
+ 
+ 
+sudo apt-get update 
+ 
+ 
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin 
+ 
+sudo docker run hello-world 
+ 
+ 
+ 
+این دستور برای نصب داکر و پیش نیازاس ممکنه طی مدت نصب یه گزینه Y هم بزنید و سپس اینتر 
+ 
+ 
+…………..…………..…………..…………..…………..……… 
+ 
+2- git clone https://github.com/ObolNetwork/charon-distributed-validator-node.git 
+ 
+نصب سورس پروژه  
+…………..…………..…………..…………..…………..……… 
+ 
+3- cd charon-distributed-validator-node 
+ 
+وارد پوشه بشید 
+…………..…………..…………..…………..…………..……… 
+ 
+4- mkdir .charon  
+پوشه جدید بسازید 
+…………..…………..…………..…………..…………..……… 
+5- sudo chmod -R 777 .charon 
+ 
+پوشه رو سینک میکنیم 
+ 
+…………..…………..…………..…………..…………..……… 
+ 
+6- docker run --rm -v "$(pwd):/opt/charon" obolnetwork/charon:v0.13.0 create enr 
+ 
+سورس رو اجرا میکنیم  
+در مرحله ۶ اطلاعات داده شده رو سیو کنید چون باید بریم تو سایت و اطلاعاتی ک داده بهمون رو وارد کنیم و والتمونو ساین کنیم
